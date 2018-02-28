@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  nuxt:
+    build: ./client
+    ports:
+      - "3000:3000"
+
+  express:
+    build: ./server
+    ports:
+      - "4000:4000"
+
+#   db:
+#     image: postgres:9.4
+#     container_name: db
+#     volumes:
+#       - "db-data:/var/lib/postgresql/data"
+#     networks:
+#       - back-tier
+
+# volumes:
+#   db-data:
+
+networks:
+  front-tier:
+  back-tier:
