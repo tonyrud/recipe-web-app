@@ -10,14 +10,15 @@ var bodyParser = require('body-parser');
 // var { Email } = require('./models/email');
 
 var app = express();
+var port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.send('server started!');
+    res.send('server started!');
 });
 
-app.listen(4000, () => {
-  console.log('started on port 4000');
+app.listen(port, () => {
+    console.log(`started on port: ${port}`);
 });

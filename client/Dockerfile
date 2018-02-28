@@ -1,14 +1,15 @@
 FROM node:8.9-alpine
 
-ENV HOME=/home/app
+ENV HOME=/app
 
 # RUN mkdir -p /app
-WORKDIR $HOME/nuxt
+WORKDIR $HOME
 
-COPY package.json $HOME/nuxt/
-RUN npm install
-COPY . $HOME/nuxt
+COPY package.json $HOME
+RUN npm install && mv node_modules /node_modules
+COPY . $HOME
 
-EXPOSE 3000
+ENV PORT 3000
+# EXPOSE 3000
 
-CMD node server2.js
+CMD npm run dev

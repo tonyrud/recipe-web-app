@@ -4,16 +4,16 @@ services:
   nuxt:
     build: ./client
     ports:
-      - "5000:5000"
+      - "3000:3000"
     volumes:
-      - ./client:/home/app/nuxt
-      - /home/app/nuxt/node_modules
+      - ./client:/app
+      - /app/node_modules
 
   express:
     build: ./server
     # command: nodemon --debug server.js
     ports:
-      - "4000:4000"
+      - "4000:80"
 
 #   db:
 #     image: postgres:9.4
