@@ -4,10 +4,14 @@ services:
   nuxt:
     build: ./client
     ports:
-      - "3000:3000"
+      - "5000:5000"
+    volumes:
+      - ./client:/home/app/nuxt
+      - /home/app/nuxt/node_modules
 
   express:
     build: ./server
+    # command: nodemon --debug server.js
     ports:
       - "4000:4000"
 
@@ -22,6 +26,6 @@ services:
 # volumes:
 #   db-data:
 
-networks:
-  front-tier:
-  back-tier:
+# networks:
+#   front-tier:
+#   back-tier:
