@@ -5,23 +5,25 @@ services:
     build: ./client
     ports:
       - "4200:4200"
-    env_file:
-      - '.env'
+    environment:
+    - HOST=0.0.0.0
+    - PORT=4200
     volumes:
       - ./client:/app
       - /app/node_modules
-    networks:
-      - front-tier
+    # networks:
+    #   - front-tier
 
   express:
     build: ./server
     # command: nodemon --debug server.js
     ports:
       - "4000:4000"
-    env_file:
-      - '.env'
-    networks:
-      - back-tier
+    environment:
+    - PORT=4000
+
+    # networks:
+    #   - back-tier
 
 #   db:
 #     image: mongo:9.4
@@ -34,6 +36,6 @@ services:
 # volumes:
 #   db-data:
 
-networks:
-  front-tier:
-  back-tier:
+# networks:
+#   front-tier:
+#   back-tier:
