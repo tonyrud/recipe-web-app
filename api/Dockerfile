@@ -9,4 +9,4 @@ COPY package.json $HOME
 RUN npm install
 COPY . $HOME
 
-CMD ["node", "server.js"]
+CMD npm start

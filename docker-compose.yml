@@ -1,32 +1,31 @@
 version: '3'
 
 services:
-  nuxt:
-    build: ./client
-    ports:
-      - "4200:4200"
-    environment:
-    - HOST=0.0.0.0
-    - PORT=4200
-    volumes:
-      - ./client:/app
-      - /app/node_modules
-    # networks:
-    #   - front-tier
+  # client:
+  #   build: ./client
+  #   ports:
+  #     - "4200:4200"
+  #   environment:
+  #     - HOST=0.0.0.0
+  #     - PORT=4200
+  #   volumes:
+  #     - ./client:/app
+  #     - /app/node_modules
+  #   networks:
+  #     - front-tier
 
-  express:
-    build: ./server
+  api:
+    build: ./api
     # command: nodemon --debug server.js
     ports:
       - "4000:4000"
     environment:
-    - PORT=4000
-
-    # networks:
-    #   - back-tier
+      - PORT=4000
+    networks:
+      - back-tier
 
 #   db:
-#     image: mongo:9.4
+#     image: mongo:3.0
 #     container_name: db
 #     volumes:
 #       - "db-data:/var/lib/mongo/data"
@@ -36,6 +35,6 @@ services:
 # volumes:
 #   db-data:
 
-# networks:
-#   front-tier:
-#   back-tier:
+networks:
+  front-tier:
+  back-tier:
