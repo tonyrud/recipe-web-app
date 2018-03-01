@@ -4,28 +4,36 @@ services:
   nuxt:
     build: ./client
     ports:
-      - "3000:3000"
+      - "4200:4200"
+    env_file:
+      - '.env'
     volumes:
       - ./client:/app
       - /app/node_modules
+    networks:
+      - front-tier
 
   express:
     build: ./server
     # command: nodemon --debug server.js
     ports:
-      - "4000:80"
+      - "4000:4000"
+    env_file:
+      - '.env'
+    networks:
+      - back-tier
 
 #   db:
-#     image: postgres:9.4
+#     image: mongo:9.4
 #     container_name: db
 #     volumes:
-#       - "db-data:/var/lib/postgresql/data"
+#       - "db-data:/var/lib/mongo/data"
 #     networks:
 #       - back-tier
 
 # volumes:
 #   db-data:
 
-# networks:
-#   front-tier:
-#   back-tier:
+networks:
+  front-tier:
+  back-tier:

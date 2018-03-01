@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 // var { Email } = require('./models/email');
 
 var app = express();
-var port = process.env.PORT || 4000;
+var port = process.env.SERVERPORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.json());

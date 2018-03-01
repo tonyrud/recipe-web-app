@@ -1,14 +1,12 @@
 FROM node:8.9-alpine
 
-RUN mkdir -p /app
-WORKDIR /app
+ENV HOME=/app
+
+WORKDIR $HOME
 
 RUN npm install -g nodemon
-COPY package.json /app/package.json
+COPY package.json $HOME
 RUN npm install
-COPY . /app
-
-ENV PORT 80
-# EXPOSE 80
+COPY . $HOME
 
 CMD ["node", "server.js"]
