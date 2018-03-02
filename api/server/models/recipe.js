@@ -13,6 +13,7 @@ const RecipeSchema = new Schema({
             ref: 'ingredient',
         },
     ],
+    image: { type: String },
 });
 
 // RecipeSchema.statics.addLyric = function(id, content) {
@@ -27,10 +28,10 @@ const RecipeSchema = new Schema({
 //     });
 // };
 
-// RecipeSchema.statics.findLyrics = function(id) {
-//     return this.findById(id)
-//         .populate('lyrics')
-//         .then(song => song.lyrics);
-// };
+RecipeSchema.statics.findIngredients = function(id) {
+    return this.findById(id)
+        .populate('ingredients')
+        .then(recipe => recipe.ingredients);
+};
 
 mongoose.model('recipe', RecipeSchema);
