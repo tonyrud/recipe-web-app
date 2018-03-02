@@ -21,6 +21,9 @@ services:
       - "4000:4000"
     environment:
       - PORT=4000
+    volumes:
+       - ./api:/app
+       - /app/node_modules
     networks:
       - back-tier
 
@@ -36,5 +39,5 @@ services:
 #   db-data:
 
 networks:
-  front-tier:
+  # front-tier:
   back-tier:

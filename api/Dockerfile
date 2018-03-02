@@ -9,4 +9,4 @@ COPY package.json $HOME
 RUN npm install
 COPY . $HOME
 
-CMD npm start
+CMD npm run dev
