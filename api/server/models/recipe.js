@@ -34,4 +34,4 @@ RecipeSchema.statics.findIngredients = function(id) {
         .then(recipe => recipe.ingredients);
 };
 
-mongoose.model('recipe', RecipeSchema);
+module.exports = mongoose.model('recipe', RecipeSchema);

@@ -6,4 +6,4 @@ const IngredientSchema = new Schema({
     category: { type: String },
 });
 
-mongoose.model('ingredient', IngredientSchema);
+module.exports = mongoose.model('ingredient', IngredientSchema);
