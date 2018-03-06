@@ -26,6 +26,8 @@ services:
       - mongodb
     depends_on:
       - mongodb
+    # networks:
+    #   - back-tier
 
   mongodb:
     image: mongo:latest
@@ -40,6 +42,12 @@ services:
     ports:
         - 27017:27017
     command: mongod --smallfiles --logpath=/dev/null # --quiet
+    network_mode: "host"
+    # networks:
+    #   - back-tier
 
 # volumes:
 #   db-data:
+
+# networks:
+#   back-tier:

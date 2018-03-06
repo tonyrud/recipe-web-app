@@ -9,6 +9,7 @@ const schema = require('./schema/schema');
 
 const MONGO_URI =
     'mongodb://dev:dev@ds161493.mlab.com:61493/recipes-graphql-app';
+// const MONGO_URI = 'mongodb://localhost:27017/local';
 
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI);
@@ -26,5 +27,9 @@ app.use(
         graphiql: true,
     }),
 );
+
+app.get('/', function(req, res) {
+    res.send('server is running');
+});
 
 module.exports = app;
