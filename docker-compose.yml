@@ -31,7 +31,7 @@ services:
 
   mongodb:
     image: mongo:latest
-    container_name: "mongodb"
+    container_name: mongodb
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
@@ -41,8 +41,8 @@ services:
       - ./data/db:/data/db
     ports:
         - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
-    network_mode: "host"
+    # command: mongod --smallfiles --logpath=/dev/null # --quiet
+    # network_mode: "host"
     # networks:
     #   - back-tier
 

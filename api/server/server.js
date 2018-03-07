@@ -7,15 +7,28 @@ const mongoose = require('mongoose');
 const app = express();
 const schema = require('./schema/schema');
 
-const MONGO_URI =
-    'mongodb://dev:dev@ds161493.mlab.com:61493/recipes-graphql-app';
-// const MONGO_URI = 'mongodb://localhost:27017/local';
+// const MONGO_URI =
+// 'mongodb://dev:dev@ds161493.mlab.com:61493/recipes-graphql-app';
+
+// use mongodb://{container-name}/{db name}
+const MONGO_URI = 'mongodb://mongodb/local';
+
+var connectWithRetry = function() {
+    return mongoose.connect(MONGO_URI, function(err) {
+        if (err) {
+            console.error(
+                'Failed to connect to mongo on startup - retrying in 5 sec',
+                err,
+            );
+            setTimeout(connectWithRetry, 5000);
+        } else {
+            console.log('Connected to local mongo instance');
+        }
+    });
+};
+connectWithRetry();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(MONGO_URI);
-mongoose.connection
-    .once('open', () => console.log('Connected to MongoLab instance.'))
-    .on('error', error => console.log('Error connecting to MongoLab:', error));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -29,7 +42,7 @@ app.use(
 );
 
 app.get('/', function(req, res) {
-    res.send('server is running');
+    res.send('API Server is running');
 });
 
 module.exports = app;
