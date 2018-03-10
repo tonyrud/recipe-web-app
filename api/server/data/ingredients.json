@@ -1,12 +1,52 @@
 [
     {
-        "_id": "58c039938060197ca0b52d4d",
-        "title": "Olive Oil",
-        "category": "oils"
+        "_id": "58c039938060197ca0b52d10",
+        "title": "extra virgin olive oil",
+        "category": "oil"
     },
     {
-        "_id": "58c03a428060197ca0b52d4f",
-        "title": "Salt",
-        "category": "spices"
+        "_id": "58c03a428060197ca0b52d11",
+        "title": "salt",
+        "category": "seasoning"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d12",
+        "title": "celery",
+        "category": "vegetable"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d13",
+        "title": "white onion",
+        "category": "vegetable"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d14",
+        "title": "garlic",
+        "category": "vegetable"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d15",
+        "title": "potatoes",
+        "category": "vegetable"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d16",
+        "title": "carrots",
+        "category": "vegetable"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d17",
+        "title": "rosemary leaves",
+        "category": "seasoning"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d18",
+        "title": "white beans",
+        "category": "bean"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d19",
+        "title": "broth",
+        "category": "broth"
     }
 ]

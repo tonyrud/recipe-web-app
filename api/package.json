@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "nodemon index.js",
         "start": "node index.js",
-        "db:seed": "node ./server/data/seed.js",
+        "db:seed": "npm run db:delete && node ./server/data/seed.js",
         "db:delete": "node ./server/data/seed.js --delete",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

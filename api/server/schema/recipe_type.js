@@ -9,6 +9,7 @@ const RecipeType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         title: { type: GraphQLString },
+        category: { type: GraphQLString },
         image: { type: GraphQLString },
         ingredients: {
             type: new GraphQLList(IngredientType),
