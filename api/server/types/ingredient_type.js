@@ -8,6 +8,8 @@ const {
     GraphQLString,
 } = graphql;
 const Ingredient = mongoose.model('ingredient');
+const Recipe = mongoose.model('recipe');
+const AmountType = require('../types/amount_type');
 
 const IngredientType = new GraphQLObjectType({
     name: 'IngredientType',
@@ -15,6 +17,12 @@ const IngredientType = new GraphQLObjectType({
         id: { type: GraphQLID },
         title: { type: GraphQLString },
         category: { type: GraphQLString },
+        // amount: {
+        //     type: GraphQLString,
+        //     resolve(parentValue) {
+        //         return Recipe.findAmount(parentValue.id);
+        //     },
+        // },
     }),
 });
 

@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 
 const Recipe = require('./../models/recipe');
 const Ingredient = require('./../models/ingredient');
+const Amount = require('./../models/amount');
 
 const recipes = JSON.parse(
     fs.readFileSync(__dirname + '/recipes.json', 'utf-8'),
@@ -13,11 +14,15 @@ const recipes = JSON.parse(
 const ingredients = JSON.parse(
     fs.readFileSync(__dirname + '/ingredients.json', 'utf-8'),
 );
+const amounts = JSON.parse(
+    fs.readFileSync(__dirname + '/amounts.json', 'utf-8'),
+);
 
 async function deleteData() {
     console.log('😢😢 Goodbye Data...');
     await Recipe.remove();
     await Ingredient.remove();
+    await Amount.remove();
     console.log(
         'Data Deleted. To load sample data, run\n\n\t npm run db:seed\n\n',
     );
@@ -28,6 +33,7 @@ async function loadData() {
     try {
         await Recipe.insertMany(recipes);
         await Ingredient.insertMany(ingredients);
+        await Amount.insertMany(amounts);
         console.log('👍👍👍👍👍👍👍👍 Done!');
         process.exit();
     } catch (e) {

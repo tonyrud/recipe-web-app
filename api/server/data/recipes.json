@@ -3,28 +3,71 @@
         "_id": "58c039018060197ca0b52d4c",
         "title": "Seeded Item",
         "category": "soups",
-        "user": "58c039018060197ca0b52d4a",
+        "author": "58c039018060197ca0b52d4a",
         "image": "https://images.media-allrecipes.com/images/75131.jpg",
-        "ingredients": ["58c039938060197ca0b52d4d", "58c03a428060197ca0b52d4f"]
+        "ingredients": [
+            {
+                "ingredient": "58c03a428060197ca0b52d10",
+                "amount": "58c03a428060197ca0b52200"
+            },
+            {
+                "ingredient": "58c03a428060197ca0b52d11",
+                "amount": "58c03a428060197ca0b52202"
+            }
+        ]
     },
     {
         "_id": "58c039018060197ca0b52d42",
         "title": "White bean, potato, spinach soup",
         "category": "soups",
-        "user": "58c039018060197ca0b52d4a",
+        "author": "58c039018060197ca0b52d4a",
         "image":
             "https://www.seriouseats.com/recipes/images/2017/03/Stir_Fried_Lo_Mein_20170315_3-edit-1500x1125.jpg",
         "ingredients": [
-            "58c039938060197ca0b52d10",
-            "58c03a428060197ca0b52d11",
-            "58c03a428060197ca0b52d12",
-            "58c03a428060197ca0b52d13",
-            "58c03a428060197ca0b52d14",
-            "58c03a428060197ca0b52d15",
-            "58c03a428060197ca0b52d16",
-            "58c03a428060197ca0b52d17",
-            "58c03a428060197ca0b52d18",
-            "58c03a428060197ca0b52d19"
+            {
+                "ingredient": "58c039938060197ca0b52d10",
+                "amount": "58c03a428060197ca0b52200"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d11",
+                "amount": "58c039938060197ca0b52202"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d12",
+                "amount": "58c039938060197ca0b52201"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d13",
+                "amount": "58c03a428060197ca0b52200"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d14",
+                "amount": "58c039938060197ca0b52202"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d15",
+                "amount": "58c039938060197ca0b52202"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d16",
+                "amount": "58c039938060197ca0b52201"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d17",
+                "amount": "58c039938060197ca0b52201"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d18",
+                "amount": "58c039938060197ca0b52202"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d19",
+                "amount": "58c039938060197ca0b52201"
+            },
+            {
+                "ingredient": "58c039938060197ca0b52d20",
+                "amount": "58c039938060197ca0b52201"
+            }
         ]
     }
 ]

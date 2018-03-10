@@ -4,17 +4,27 @@ const Schema = mongoose.Schema;
 const RecipeSchema = new Schema({
     title: { type: String },
     category: { type: String },
-    user: {
+    created: {
+        type: Date,
+        default: Date.now,
+    },
+    author: {
         type: Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'author',
     },
     ingredients: [
         {
-            type: Schema.Types.ObjectId,
-            ref: 'ingredient',
+            ingredient: {
+                type: Schema.Types.ObjectId,
+                ref: 'ingredient',
+            },
+            amount: {
+                type: Schema.Types.ObjectId,
+                ref: 'amount',
+            },
         },
     ],
-    image: { type: String },
+    image: String,
 });
 
 // RecipeSchema.statics.addLyric = function(id, content) {
@@ -31,8 +41,17 @@ const RecipeSchema = new Schema({
 
 RecipeSchema.statics.findIngredients = function(id) {
     return this.findById(id)
+        .populate('ingredients.ingredient')
+        .then(recipe => {
+            return recipe.ingredients.map(({ ingredient }) => ingredient);
+        });
+};
+RecipeSchema.statics.findAmount = function(id) {
+    return this.findById(id)
         .populate('ingredients')
-        .then(recipe => recipe.ingredients);
+        .then(recipe => {
+            console.log('recipe: ', recipe);
+        });
 };
 
 module.exports = mongoose.model('recipe', RecipeSchema);

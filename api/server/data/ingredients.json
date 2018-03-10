@@ -1,6 +1,6 @@
 [
     {
-        "_id": "58c039938060197ca0b52d10",
+        "_id": "58c03a428060197ca0b52d10",
         "title": "extra virgin olive oil",
         "category": "oil"
     },
@@ -48,5 +48,10 @@
         "_id": "58c03a428060197ca0b52d19",
         "title": "broth",
         "category": "broth"
+    },
+    {
+        "_id": "58c03a428060197ca0b52d20",
+        "title": "bay leaf",
+        "category": "seasoning"
     }
 ]
