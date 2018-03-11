@@ -14,16 +14,11 @@ const RecipeSchema = new Schema({
     },
     ingredients: [
         {
-            ingredient: {
-                type: Schema.Types.ObjectId,
-                ref: 'ingredient',
-            },
-            amount: {
-                type: Schema.Types.ObjectId,
-                ref: 'amount',
-            },
+            type: Schema.Types.ObjectId,
+            ref: 'ingredient',
         },
     ],
+    steps: [String],
     image: String,
 });
 
@@ -41,17 +36,16 @@ const RecipeSchema = new Schema({
 
 RecipeSchema.statics.findIngredients = function(id) {
     return this.findById(id)
-        .populate('ingredients.ingredient')
-        .then(recipe => {
-            return recipe.ingredients.map(({ ingredient }) => ingredient);
-        });
-};
-RecipeSchema.statics.findAmount = function(id) {
-    return this.findById(id)
         .populate('ingredients')
-        .then(recipe => {
-            console.log('recipe: ', recipe);
-        });
+        .then(recipe => recipe.ingredients);
 };
+// RecipeSchema.statics.findAmount = function(id) {
+//     return this.findById(id)
+//         .populate('ingredients')
+//         .then(recipe => {
+//             console.log('recipe: ', recipe);
+//             return recipe.ingredients.map(({ amount }) => amount);
+//         });
+// };
 
 module.exports = mongoose.model('recipe', RecipeSchema);

@@ -11,7 +11,7 @@ const schema = require('./schema/schema');
 // 'mongodb://dev:dev@ds161493.mlab.com:61493/recipes-graphql-app';
 
 // use mongodb://{container-name}/{db name}
-const MONGO_URI = 'mongodb://mongodb/local';
+const MONGO_URI = 'mongodb://mongodb/recipes';
 
 var connectWithRetry = function() {
     return mongoose.connect(MONGO_URI, function(err) {
